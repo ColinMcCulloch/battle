@@ -8,7 +8,7 @@ feature 'enter player names' do
     visit '/'
     fill_in(:player1, with: 'Dave')
     fill_in(:player2, with: 'Joan')
-    click_button 'submit'
+    click_button 'Submit'
     expect(page).to have_content 'Dave vs. Joan'
   end
 end
