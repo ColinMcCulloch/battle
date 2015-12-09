@@ -39,9 +39,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capybara (~> 2.5)
-  rspec-sinatra (~> 0.1.2)
-  sinatra (~> 1.4, >= 1.4.6)
+  capybara
+  rspec-sinatra
+  sinatra
 
 BUNDLED WITH
    1.10.6
