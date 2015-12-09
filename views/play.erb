@@ -1,6 +1,16 @@
-<div>
-<%= @player1 %> vs. <%= @player2 %>
-</div>
-<div>
-<%= @player2 %> 77hp
-</div>
+<!DOCTYPE html>
+<html>
+  <body>
+    <div>
+      <%= @player1 %> vs. <%= @player2 %>
+    </div>
+    <div>
+      <%= @player2 %> 77hp
+    </div>
+    <div>
+      <form action="/attack">
+        <input type="submit" value="Attack">
+      </form>
+    </div>
+  </body>
+</html>
