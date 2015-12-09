@@ -5,10 +5,7 @@
 
 feature 'enter player names' do
   scenario 'submitting names' do
-    visit '/'
-    fill_in(:player1, with: 'Dave')
-    fill_in(:player2, with: 'Joan')
-    click_button 'Submit'
+  sign_in_and_play
     expect(page).to have_content 'Dave vs. Joan'
   end
 end
@@ -18,10 +15,7 @@ end
 # I want to see Player 2's Hit Points
 feature 'display player 2 hitpoints' do
   scenario 'display player 2 hit points' do
-  visit '/'
-  fill_in(:player1, with: 'Dave')
-  fill_in(:player2, with: 'Joan')
-  click_button 'Submit'
+  sign_in_and_play
   expect(page).to have_content 'Joan 77hp'
   end
 end
