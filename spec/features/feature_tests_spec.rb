@@ -45,5 +45,19 @@ feature 'reduces hp' do
     click_button 'Play'
     expect(page).to have_content 'Joan 67hp'
   end
+#   As two Players,
+# So we can continue our game of Battle,
+# We want to switch turns
+
+feature 'switch turns' do
+  scenario 'click a button to switch turns' do
+    sign_in_and_play
+    click_button 'Attack'
+    click_button 'Play'
+    expect
+
+  end
+end
+
 
 end
