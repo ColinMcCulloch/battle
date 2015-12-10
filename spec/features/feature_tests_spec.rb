@@ -32,3 +32,7 @@ feature 'attack player2 and receive confirmation' do
     expect(page).to have_content('You have attacked Joan')
   end
 end
+
+# As Player 1,
+# So I can start to win a game of Battle,
+# I want my attack to reduce Player 2's HP
