@@ -1,3 +1,5 @@
+require_relative 'game'
+
 class Player
 
   STARTING_HP = 77
@@ -9,10 +11,6 @@ attr_reader :name, :hp
     @name = name
     @hp = STARTING_HP
 
-  end
-
-  def attack(player)
-    player.reduce_hp
   end
 
   def reduce_hp
