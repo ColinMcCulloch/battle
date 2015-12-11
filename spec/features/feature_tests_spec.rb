@@ -54,8 +54,7 @@ feature 'switch turns' do
     sign_in_and_play
     click_button 'Attack'
     click_button 'Play'
-    expect
-
+    expect(page).to have_content "Joan's turn"
   end
 end
 

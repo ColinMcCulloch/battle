@@ -13,12 +13,19 @@ class Game
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
+    @current_player = player1
   end
 
   def attack(player)
     player.reduce_hp
   end
 
+  def current_player
+    @current_player
+  end
 
+  def switch_player
+    @current_player = ( @current_player == player1 ? player2 : player1 )
+  end
 
 end
