@@ -43,7 +43,19 @@ describe '#other_player' do
     game.switch_player
     expect(game.other_player).to eq player1
   end
+end
 
+describe '#game_over?' do
+  it 'returns false when not game_over' do
+    allow(player1).to receive(:hp) {100}
+    allow(player2).to receive(:hp) {100}
+    expect(game.game_over?).to eq false
+  end
+  it 'returns true when game_over' do
+    allow(player1).to receive(:hp) {100}
+    allow(player2).to receive(:hp) {0}
+    expect(game.game_over?).to eq true
+  end
 end
 
 

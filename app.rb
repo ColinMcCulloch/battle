@@ -21,12 +21,17 @@ class BattleApp < Sinatra::Base
 
   get '/attack' do
     $game.attack($game.other_player)
+    redirect '/game_over' if $game.game_over?
     erb(:attack)
   end
 
   post '/switch_player' do
     $game.switch_player
     redirect '/play'
+  end
+
+  get '/game_over' do
+    erb(:game_over)
   end
 
   # start the server if ruby file executed directly

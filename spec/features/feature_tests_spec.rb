@@ -17,7 +17,7 @@ end
 feature 'display player 2 hitpoints' do
   scenario 'display player 2 hit points' do
   sign_in_and_play
-  expect(page).to have_content 'Joan 77hp'
+  expect(page).to have_content 'Joan 50hp'
   end
 end
 
@@ -28,7 +28,7 @@ end
 feature 'display player 1 hitpoints' do
   scenario 'display player 1 hit points' do
   sign_in_and_play
-  expect(page).to have_content 'Dave 77hp'
+  expect(page).to have_content 'Dave 50hp'
   end
 end
 
@@ -68,7 +68,7 @@ feature 'reduces players hp when attacked' do
     sign_in_and_play
     click_button 'Attack'
     click_button 'Play'
-    expect(page).to have_content 'Joan 67hp'
+    expect(page).to have_content 'Joan 40hp'
   end
 
   #   As Player 1,
@@ -80,7 +80,7 @@ feature 'reduces players hp when attacked' do
     click_button 'Play'
     click_button 'Attack'
     click_button 'Play'
-    expect(page).to have_content 'Dave 67hp'
+    expect(page).to have_content 'Dave 40hp'
   end
 end
 
@@ -94,5 +94,21 @@ end
       click_button 'Attack'
       click_button 'Play'
       expect(page).to have_content "Joan's turn"
+    end
+  end
+
+  #   As a Player,
+  # So I can Lose a game of Battle,
+  # I want to see a 'Lose' message if I reach 0HP first
+
+  feature 'Game ends' do
+    scenario 'Game ends when player2 hp reaches zero' do
+      sign_in_and_play
+      8.times do
+        click_button 'Attack'
+        click_button 'Play'
+      end
+      click_button 'Attack'
+      expect(page).to have_content  "Game Over, Dave is the winner"
     end
   end
