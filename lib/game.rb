@@ -8,7 +8,7 @@ class Game
   def_delegator :player1, :hp, :player1_hp
   def_delegator :player2, :hp, :player2_hp
 
-  attr_reader :player1, :player2
+  attr_reader :player1, :player2, :current_player
 
   def initialize(player1, player2)
     @player1 = player1
@@ -20,12 +20,12 @@ class Game
     player.reduce_hp
   end
 
-  def current_player
-    @current_player
+  def switch_player
+    @current_player = other_player
   end
 
-  def switch_player
-    @current_player = ( @current_player == player1 ? player2 : player1 )
+  def other_player
+    @current_player == player1 ? player2 : player1
   end
 
 end

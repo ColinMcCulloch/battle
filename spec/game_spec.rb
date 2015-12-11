@@ -26,12 +26,24 @@ describe '#current_player' do
   end
 end
 
-describe 'swith_player' do
+describe '#switch_player' do
   it 'switches player' do
     game.current_player
     game.switch_player
     expect(game.current_player).to eq player2
   end
+end
+
+describe '#other_player' do
+  it 'returns player2 as default other player' do
+    expect(game.other_player).to eq player2
+  end
+
+  it 'returns player1 as other player, after having changed turn' do
+    game.switch_player
+    expect(game.other_player).to eq player1
+  end
+
 end
 
 

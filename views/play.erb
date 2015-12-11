@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <body>
-    <div>
-      <%= $game.player1_name %> vs. <%= $game.player2_name %>
-    </div>
-    <div>
-      <%= $game.player2_name %> <%= $game.player2_hp %>hp
-    </div>
-    <div>
-      <form action="/attack">
-        <label for="Attack">
-          <%= $game.current_player.name %>'s turn
-        <input type="submit" value="Attack">
-      </label>
-      </form>
-    </div>
-</body>
-</html>
+<h1><%= $game.player1_name %> vs. <%= $game.player2_name %></h1>
+
+<h3><%= $game.player2_name %> <%= $game.player2_hp %>hp</h3>
+
+<h3><%= $game.player1_name %> <%= $game.player1_hp %>hp</h3>
+
+<form action="/attack">
+  <label for="Attack">
+    <%= $game.current_player.name %>'s turn
+  <input type="submit" value="Attack">
+</label>
+</form>

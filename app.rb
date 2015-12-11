@@ -20,7 +20,7 @@ class BattleApp < Sinatra::Base
   end
 
   get '/attack' do
-    $game.attack($game.player2)
+    $game.attack($game.other_player)
     erb(:attack)
   end
 

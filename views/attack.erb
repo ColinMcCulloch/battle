@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <body>
-  <h1>You have attacked <%= $game.player2_name %></h1>
-  <form action="/switch_player" method="post">
-    <input type="submit" value="Play">
-  </form>
-  </body>
-</html>
+<h1>You have attacked <%= $game.other_player.name %></h1>
+
+<form action="/switch_player" method="post">
+  <input type="submit" value="Play">
+</form>
